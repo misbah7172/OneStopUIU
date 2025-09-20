@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" 
+           fx:controller="com.example.onestopuiu.controller.AdminDashboardController"
+           stylesheets="@styles.css" style="-fx-background-color: #ffffff;">
+    
+    <!-- Header -->
+    <top>
+        <VBox styleClass="header-container">
+            <HBox alignment="CENTER_LEFT" spacing="16">
+                <Label fx:id="welcomeLabel" styleClass="welcome-label" HBox.hgrow="ALWAYS"/>
+                <Button onAction="#handleLogout" text="Logout" styleClass="secondary-button"/>
+            </HBox>
+        </VBox>
+    </top>
+    
+    <!-- Main Content -->
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-border-color: transparent;">
+            <VBox spacing="32" style="-fx-padding: 40px; -fx-background-color: #ffffff;">
+                
+                <!-- Dashboard Stats -->
+                <HBox spacing="24" alignment="CENTER">
+                    
+                    <VBox styleClass="dashboard-tile" HBox.hgrow="ALWAYS" alignment="CENTER">
+                        <Label styleClass="dashboard-title" text="Today's Food Sales"/>
+                        <Text fx:id="todayFoodSales" styleClass="dashboard-value"/>
+                    </VBox>
+                    
+                    <VBox styleClass="dashboard-tile" HBox.hgrow="ALWAYS" alignment="CENTER">
+                        <Label styleClass="dashboard-title" text="Pending Orders"/>
+                        <Text fx:id="pendingOrdersCount" styleClass="dashboard-value"/>
+                    </VBox>
+                    
+                    <VBox styleClass="dashboard-tile" HBox.hgrow="ALWAYS" alignment="CENTER">
+                        <Label styleClass="dashboard-title" text="Low Stock Items"/>
+                        <Text fx:id="lowStockCount" styleClass="dashboard-value"/>
+                    </VBox>
+                    
+                </HBox>
+                
+                <!-- Management Sections -->
+                <HBox spacing="24">
+                    
+                    <!-- Canteen Management -->
+                    <VBox spacing="16" HBox.hgrow="ALWAYS" styleClass="section-container">
+                        <Label text="Canteen Management" styleClass="page-title"/>
+                        
+                        <Button onAction="#handleAddFoodItem" text="Manage Food Items" 
+                               styleClass="button" prefWidth="200"/>
+                        <Button onAction="#handleViewFoodOrders" text="View Food Orders" 
+                               styleClass="button" prefWidth="200"/>
+                        <Button onAction="#handleGenerateFoodReport" text="Generate Food Report" 
+                               styleClass="button" prefWidth="200"/>
+                    </VBox>
+                    
+                    <!-- User Management -->
+                    <VBox spacing="16" HBox.hgrow="ALWAYS" styleClass="section-container">
+                        <Label text="User Management" styleClass="page-title"/>
+                        
+                        <Button onAction="#handleViewSellerRequests" text="Manage Seller Requests" 
+                               styleClass="button" prefWidth="200"/>
+                    </VBox>
+                    
+                </HBox>
+                
+                <!-- Food Items Table -->
+                <VBox spacing="16" styleClass="section-container">
+                    <Label text="Food Items" styleClass="page-title"/>
+                    
+                    <TableView fx:id="foodItemsTable" prefHeight="300" styleClass="table-view">
+                        <columns>
+                            <TableColumn fx:id="foodIdColumn" text="ID" prefWidth="60">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="id"/>
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn fx:id="foodNameColumn" text="Name" prefWidth="120">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="name"/>
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn fx:id="foodPriceColumn" text="Price" prefWidth="80">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="price"/>
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn fx:id="foodDescriptionColumn" text="Description" prefWidth="200">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="description"/>
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn fx:id="foodCategoryColumn" text="Category" prefWidth="100">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="category"/>
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn fx:id="foodStockColumn" text="Stock" prefWidth="70">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="stockQuantity"/>
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn fx:id="foodAvailableColumn" text="Available" prefWidth="80">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="available"/>
+                                </cellValueFactory>
+                            </TableColumn>
+                        </columns>
+                        <columnResizePolicy>
+                            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                        </columnResizePolicy>
+                    </TableView>
+                </VBox>
+                
+            </VBox>
+        </ScrollPane>
+    </center>
+    
+</BorderPane>

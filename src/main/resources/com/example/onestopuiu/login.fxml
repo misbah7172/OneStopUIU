@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.onestopuiu.controller.LoginController"
+         stylesheets="@styles.css" style="-fx-background-color: #ffffff;">
+    
+    <center>
+        <VBox alignment="CENTER" spacing="32" styleClass="form-container" maxWidth="400" minWidth="400">
+            
+            <!-- Title -->
+            <Text styleClass="title-text" text="OneStopUIU"/>
+            
+            <!-- Login Form -->
+            <VBox spacing="24" alignment="CENTER">
+                
+                <!-- Username Field -->
+                <VBox spacing="8" alignment="CENTER_LEFT">
+                    <Label text="Username" styleClass="form-label"/>
+                    <TextField fx:id="usernameField" promptText="Enter username" 
+                              prefWidth="300" styleClass="text-field"/>
+                </VBox>
+                
+                <!-- Password Field -->
+                <VBox spacing="8" alignment="CENTER_LEFT">
+                    <Label text="Password" styleClass="form-label"/>
+                    <PasswordField fx:id="passwordField" promptText="Enter password" 
+                                  prefWidth="300" styleClass="password-field"/>
+                </VBox>
+                
+                <!-- Login Button -->
+                <Button text="Login" onAction="#handleLogin" 
+                       prefWidth="300" styleClass="button"/>
+                
+                <!-- Separator -->
+                <Region prefHeight="16"/>
+                
+                <!-- Sign Up Section -->
+                <VBox alignment="CENTER" spacing="12">
+                    <Label text="Don't have an account?" styleClass="form-label"/>
+                    <Button text="Sign Up" onAction="#handleSignup" 
+                           prefWidth="300" styleClass="secondary-button"/>
+                </VBox>
+                
+            </VBox>
+            
+            <!-- Message Label -->
+            <Label fx:id="messageLabel" styleClass="message-label" wrapText="true"/>
+            
+        </VBox>
+    </center>
+    
+</BorderPane> 

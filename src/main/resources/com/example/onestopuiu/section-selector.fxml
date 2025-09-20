@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" 
+           fx:controller="com.example.onestopuiu.controller.SectionSelectorController"
+           stylesheets="@styles.css" style="-fx-background-color: #ffffff;">
+    
+    <!-- Header -->
+    <top>
+        <VBox styleClass="header-container">
+            <HBox alignment="CENTER_LEFT" spacing="16">
+                <Button fx:id="myOrdersButton" onAction="#handleMyOrders" 
+                       text="My Orders" styleClass="secondary-button"/>
+                
+                <Region HBox.hgrow="ALWAYS"/>
+                
+                <Label text="Become a seller" styleClass="form-label"/>
+                <Button fx:id="becomeSellerButton" onAction="#handleBecomeSeller" 
+                       text="Apply" styleClass="secondary-button"/>
+            </HBox>
+        </VBox>
+    </top>
+    
+    <!-- Main Content -->
+    <center>
+        <VBox alignment="CENTER" spacing="48" style="-fx-padding: 80px 40px;">
+            
+            <!-- Welcome -->
+            <VBox alignment="CENTER" spacing="8">
+                <Label fx:id="welcomeLabel" styleClass="welcome-label"/>
+                <Label text="Select a section" styleClass="form-label"/>
+            </VBox>
+            
+            <!-- Section Button -->
+            <Button fx:id="canteenButton" onAction="#handleCanteenSection" 
+                   styleClass="section-button" prefWidth="240" prefHeight="240">
+                <graphic>
+                    <VBox alignment="CENTER" spacing="16">
+                        <Text styleClass="emoji-text" text="🥘"/>
+                        <Label text="Order Food" style="-fx-font-size: 16px; -fx-font-weight: 400;"/>
+                    </VBox>
+                </graphic>
+            </Button>
+            
+        </VBox>
+    </center>
+    
+    <!-- Footer -->
+    <bottom>
+        <VBox alignment="CENTER" style="-fx-padding: 20px;">
+            <Button text="Log Out" onAction="#handleLogout" 
+                   styleClass="secondary-button" prefWidth="120"/>
+        </VBox>
+    </bottom>
+    
+</BorderPane>

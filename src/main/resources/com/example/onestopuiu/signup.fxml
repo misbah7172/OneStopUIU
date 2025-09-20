@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" 
+           fx:controller="com.example.onestopuiu.controller.SignupController"
+           stylesheets="@styles.css" style="-fx-background-color: #ffffff;">
+    
+    <center>
+        <VBox alignment="CENTER" spacing="32" styleClass="form-container" maxWidth="400" minWidth="400">
+            
+            <!-- Title -->
+            <Text styleClass="title-text" text="Create Account"/>
+            
+            <!-- Signup Form -->
+            <VBox spacing="20" alignment="CENTER">
+                
+                <!-- Username Field -->
+                <VBox spacing="8" alignment="CENTER_LEFT">
+                    <Label text="Username" styleClass="form-label"/>
+                    <TextField fx:id="usernameField" promptText="Enter username" 
+                              prefWidth="300" styleClass="text-field"/>
+                </VBox>
+                
+                <!-- Password Field -->
+                <VBox spacing="8" alignment="CENTER_LEFT">
+                    <Label text="Password" styleClass="form-label"/>
+                    <PasswordField fx:id="passwordField" promptText="Enter password" 
+                                  prefWidth="300" styleClass="password-field"/>
+                </VBox>
+                
+                <!-- Confirm Password Field -->
+                <VBox spacing="8" alignment="CENTER_LEFT">
+                    <Label text="Confirm Password" styleClass="form-label"/>
+                    <PasswordField fx:id="confirmPasswordField" promptText="Confirm password" 
+                                  prefWidth="300" styleClass="password-field"/>
+                </VBox>
+                
+                <!-- Full Name Field -->
+                <VBox spacing="8" alignment="CENTER_LEFT">
+                    <Label text="Full Name" styleClass="form-label"/>
+                    <TextField fx:id="fullNameField" promptText="Enter full name" 
+                              prefWidth="300" styleClass="text-field"/>
+                </VBox>
+                
+                <!-- Email Field -->
+                <VBox spacing="8" alignment="CENTER_LEFT">
+                    <Label text="Email" styleClass="form-label"/>
+                    <TextField fx:id="emailField" promptText="Enter email address" 
+                              prefWidth="300" styleClass="text-field"/>
+                </VBox>
+                
+                <!-- Sign Up Button -->
+                <Button text="Sign Up" onAction="#handleSignup" 
+                       prefWidth="300" styleClass="button"/>
+                
+                <!-- Separator -->
+                <Region prefHeight="16"/>
+                
+                <!-- Back to Login Section -->
+                <VBox alignment="CENTER" spacing="12">
+                    <Label text="Already have an account?" styleClass="form-label"/>
+                    <Button text="Back to Login" onAction="#handleBackToLogin" 
+                           prefWidth="300" styleClass="secondary-button"/>
+                </VBox>
+                
+            </VBox>
+            
+            <!-- Message Label -->
+            <Label fx:id="messageLabel" styleClass="message-label" wrapText="true"/>
+            
+        </VBox>
+    </center>
+    
+</BorderPane>
+    
+    <Label fx:id="messageLabel" styleClass="message-label"/>
+</VBox> 
