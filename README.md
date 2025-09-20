@@ -1,4 +1,5 @@
 # OneStopUIU
+## All Your Essential at OneStopUIU
 
 OneStopUIU is a simple and clean management system made to handle canteen activities at United International University (UIU). It lets users manage food orders all in one place, with different views for customers and admins. The design is modern and uses just a few colors, keeping things easy to use and not crowded.
 ---
